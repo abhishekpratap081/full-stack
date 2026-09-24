@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+}
+
+.poster {
+  width: 100%;
+  max-width: 620px;
+  min-height: 780px;
+  margin: 20px auto;
+  padding: 20px 25px 30px;
+
+  position: relative;
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    ),
+    #285894;
+}
+
+/* Decorative background shapes */
+
+.poster::before {
+  content: "";
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  top: 250px;
+  left: -180px;
+
+  z-index: 0;
+}
+
+.poster::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  bottom: -300px;
+  right: -150px;
+
+  z-index: 0;
+}
+
+/* Header */
+
+.header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 2px;
+}
+
+.imdb {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.best {
+  border: 3px solid #e8e8e8;
+
+  padding: 1px 10px;
+
+  height: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #eee;
+
+  transform: rotate(-1deg);
+}
+
+.best span {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.best strong {
+  font-size: 30px;
+  line-height: 25px;
+}
+
+/* Main heading */
+
+h1 {
+  position: relative;
+  z-index: 2;
+
+  font-size: 36px;
+  line-height: 36px;
+
+  color: #f5b7b8;
+
+  font-weight: 900;
+
+  margin-top: 5px;
+
+  letter-spacing: -1px;
+}
+
+.date {
+  position: relative;
+  z-index: 2;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  margin-top: 2px;
+}
+
+/* Movie grid */
+
+.movie-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 28px;
+
+  row-gap: 15px;
+
+  margin-top: 18px;
+}
+
+/* Movie card */
+
+.movie-card {
+  display: flex;
+
+  align-items: center;
+
+  min-width: 0;
+}
+
+/* Circular image */
+
+.movie-image {
+  width: 78px;
+  height: 78px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Movie details */
+
+.movie-info {
+  display: flex;
+
+  align-items: center;
+
+  margin-left: 7px;
+
+  min-width: 0;
+}
+
+.rank {
+  font-size: 34px;
+
+  font-weight: 900;
+
+  color: #f4b7b8;
+
+  line-height: 1;
+
+  margin-right: 5px;
+}
+
+.movie-name {
+  color: white;
+
+  font-size: 15px;
+
+  line-height: 16px;
+
+  font-weight: 900;
+
+  max-width: 115px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+  .poster {
+    margin: 0;
+    min-height: 100vh;
+
+    padding: 18px 16px 25px;
+  }
+
+  .imdb {
+    font-size: 48px;
+  }
+
+  .best {
+    height: 42px;
+  }
+
+  .best strong {
+    font-size: 25px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 31px;
+  }
+
+  .movie-grid {
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+
+  .movie-image {
+    width: 62px;
+    height: 62px;
+  }
+
+  .rank {
+    font-size: 28px;
+  }
+
+  .movie-name {
+    font-size: 12px;
+    line-height: 13px;
+    max-width: 90px;
+  }
+}
